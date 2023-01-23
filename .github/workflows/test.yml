@@ -2,24 +2,24 @@ name: Test Python Scripts
 on:  
   workflow_dispatch:
     inputs:      
-		  test_input:        
-			  description: 'Please provide Test'
+      test_input:        
+        description: 'Please provide Test'
 				
 env: 
   sample_str: "${{ github.event.inputs.test_input }}" 
-	context: ${{toJson(github)}}
+  context: ${{toJson(github)}}
 jobs:  
-  python_test:    
-	  runs-on: ubuntu-latest
+  python_test:
+    runs-on: ubuntu-latest
     steps:
-		  - uses: actions/checkout@main
+      - uses: actions/checkout@main
       - name: Set outputs
         id: set_outputs
         shell: python
         run: | 
-				  sampleStr = "${{ env.sample_str }}"          
-					print(sampleStr)          
-					sampleStr = "${{ env.sample_str }}".strip()          
-					print(sampleStr)          
-					str = "${{ env.context }}"          
-					print(str)
+          sampleStr = "${{ env.sample_str }}"   
+          print(sampleStr)          
+          sampleStr = "${{ env.sample_str }}".strip()       
+          print(sampleStr)          
+          str = "${{ env.context }}"          
+          print(str)
