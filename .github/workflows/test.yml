@@ -4,7 +4,6 @@ on:
     inputs:      
       test_input:        
         description: 'Please provide Test'
-				
 env: 
   sample_str: "${{ github.event.inputs.test_input }}" 
   context: ${{toJson(github)}}
