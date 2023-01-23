@@ -20,5 +20,5 @@ jobs:
           print(sampleStr)          
           sampleStr = "${{ env.sample_str }}".strip()       
           print(sampleStr)          
-          str = "${{ env.context }}"          
-          print(str)
+          print("${{ env.context }}")
+          #print(str)
